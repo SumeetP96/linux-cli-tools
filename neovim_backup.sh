@@ -58,9 +58,9 @@ case $confirm in
         if [ $? -eq 0 ]; then
             echo -e "\n${BLUE}> ${YELLOW}exec: git push${NC}";
             git -C $backup_dir/ push;
-            echo -e "\n${BLUE}Backup successful.${NC}";
+            echo -e "\n${BLUE}Backup successful.${NC}\n";
         else
-            echo "Backup failed!";
+            echo -e "\nBackup failed!\n";
             exit 1;
         fi
         ;;
