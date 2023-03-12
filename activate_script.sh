@@ -46,7 +46,3 @@ fi
 
 activate_script
 
-
-
-
-
