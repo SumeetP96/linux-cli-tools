@@ -1,26 +1,17 @@
 #!/bin/bash
 
-# Backup updated Neovim config to github
-
-# IMPORTANT
-# This script currently leaverages an pre-configured and user-modified
-# nvim config cloned from other repository.
-# This will change in the future 
-# As I'll break the config and assemble it as per my needs
+# Backup i3 window manager configs
 
 NC='\033[0m'
 BLUE='\033[0;34m'
 YELLOW='\033[0;33m'
 
-neovim_dir=/home/$USER/.config/nvim
-backup_dir=/home/$USER/Personal/configs/neovim-config
+i3_dir=/home/$USER/.config/i3
+backup_dir=/home/$USER/Personal/configs/i3wm-config
 backup_date=$(date "+%d-%m-%Y")
 
-echo -e "${BLUE}> ${YELLOW}Updating the source config...${NC}"
-git -C $neovim_dir/ pull
-
 echo -e "\n${BLUE}> ${YELLOW}Migrating source config to ${BLUE}${backup_dir}${NC}"
-rsync --delete --quiet -r -P $neovim_dir/* $backup_dir/
+rsync --delete --quiet -r -P $i3_dir/* $backup_dir/
 echo -e "${BLUE}> ${YELLOW}Migration complete. ${NC}\n"
 
 echo -e "${BLUE}> ${YELLOW}Updating target repository...${NC}"
