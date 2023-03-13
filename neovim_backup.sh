@@ -20,7 +20,7 @@ echo -e "${BLUE}> ${YELLOW}Updating the source config...${NC}"
 git -C $neovim_dir/ pull
 
 echo -e "\n${BLUE}> ${YELLOW}Migrating source config to ${BLUE}${backup_dir}${NC}"
-rsync --delete --quiet -r -P $neovim_dir/* $backup_dir/
+cp $neovim_dir/init.lua $backup_dir/
 echo -e "${BLUE}> ${YELLOW}Migration complete. ${NC}\n"
 
 echo -e "${BLUE}> ${YELLOW}Updating target repository...${NC}"
