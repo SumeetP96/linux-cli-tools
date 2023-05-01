@@ -5,7 +5,7 @@
 # IMPORTANT
 # This script currently leaverages an pre-configured and user-modified
 # nvim config cloned from other repository.
-# This will change in the future
+# This might change in the future
 # As I'll break the config and assemble it as per my needs
 
 NC='\033[0m'
@@ -20,7 +20,7 @@ backup_date=$(date "+%d-%m-%Y")
 # git -C $neovim_dir/ pull
 
 echo -e "\n${BLUE}> ${YELLOW}Migrating source config to ${BLUE}${backup_dir}${NC}"
-cp $neovim_dir/init.lua $backup_dir/
+cp -r $neovim_dir/* $backup_dir/
 echo -e "${BLUE}> ${YELLOW}Migration complete. ${NC}\n"
 
 echo -e "${BLUE}> ${YELLOW}Updating target repository...${NC}"
