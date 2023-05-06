@@ -66,12 +66,8 @@ read confirm
 case $confirm in
 [yY])
 	echo yes
-	echo -n -e "\n${BLUE}:: ${NC}Commit message (optional) : "
+	echo -n -e "\n${BLUE}:: ${NC}Commit message (required) : "
 	read commit_message
-
-	if [[ -z commit_message ]]; then
-		commit_message="config updates ${backup_date}"
-	fi
 
 	echo -e "\n${BLUE}> ${YELLOW}exec: git commit -m \"${commit_message}\"${NC}"
 	git -C $backup_dir/ commit -m "${commit_message}"
